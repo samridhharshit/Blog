@@ -19,7 +19,7 @@ The Project was made using EmbeddedJs, Bootstrap, Flexbox, Css for Front-End and
 
 ![Blogs arranged by latest and most liked](https://user-images.githubusercontent.com/39849261/70555378-e6dc3880-1ba4-11ea-87d3-b8058c63653f.png)
 
-
+ 
 #### Login:
 
 ![login](https://user-images.githubusercontent.com/39849261/70555202-9533ae00-1ba4-11ea-9c0e-2553432a91af.png)
