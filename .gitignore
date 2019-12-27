@@ -1,2 +1,5 @@
 .env
 node_modules
+_config.yml
+package-lock.json
+bootstrap-4.3.1-dist
