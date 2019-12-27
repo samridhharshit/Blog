@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/blogPage.css" />
+    <title>Blog | Opdemy</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Navigation-2 -->
+      <nav class="navbar top-nav justify-content-between" id="navbar">
+        <button
+          class="navbar-toggler hidden-sm-up"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          &#9776;
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="row">
+            <div class="col-sm-12 nav-2">
+              <div class="redirect ">
+                <a href="/blogOpdemy">Home</a>
+                <div class="redirect ">
+                  <form
+                    class="redirect "
+                    action="/logout?_method=DELETE"
+                    method="POST"
+                  >
+                    <button type="submit" class="buttonl">Log out</button>
+                  </form>
+                </div>
+              </div>
+
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn my-2 my-sm-0" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Blog Body -->
+      <div class="blogbody">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-lg-7">
+            <div class="image">
+              <img src="/images/logo.png" />
+            </div>
+            <div class="container-fluid blog-container">
+              <h2><%= obj.blog[0].title %></h2>
+              <br />
+              <div class="blogcontent">
+                <p>
+                  <%= obj.blog[0].blogContent %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <!-- discuss Plugin -->
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function() {
+          this.page.url =
+            "http://localhost:3000/blogPage/<%= obj.blog[0].Id %>"; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.title = "Express your thoughts about the Blog here!";
+          this.page.identifier = "<%= obj.blog[0].Id %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() {
+          // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://opdemy-blog.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript
+        >Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript"
+          >comments powered by Disqus.</a
+        ></noscript
+      >
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <h5>Copyright © 2019. All Rights Reserved.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      window.onscroll = function() {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+</html>

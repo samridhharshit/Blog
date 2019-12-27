@@ -1,0 +1,227 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button.btn {
+  color: aliceblue;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #37a48d;
+  opacity: 0.8;
+}
+
+div.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+div.row {
+  width: 100%;
+  margin: 25px 25px 25px 0;
+}
+
+div.navigation {
+  background-color: #37a48d;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+}
+
+nav.o {
+  margin: 3rem 0;
+  /* margin-top: auto; */
+  max-height: 15rem;
+}
+
+a.logo {
+  font-size: 88px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding: 5px;
+  border: 3px solid;
+  border-radius: 50%;
+}
+
+h2.icon {
+  color: white;
+}
+
+nav.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+div.nav-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.redirect a,
+div.redirect button {
+  padding: 20px;
+  color: white;
+}
+
+div.redirect button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+div.redirect a:hover,
+div.redirect button:hover {
+  border: 1px solid white;
+}
+
+div.blog-header {
+  display: flex;
+  justify-content: center;
+}
+
+div.blog-header h2 {
+  font-weight: 400;
+}
+
+div.blog-image-container {
+  display: flex;
+  align-items: center;
+}
+
+div.blogcard {
+  border: 1px solid green;
+  border-radius: 2px;
+}
+
+img.blog-image {
+  width: 12rem;
+  height: 15vh;
+}
+
+div.button {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.blog-navigation-buttons {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+
+a.card-button {
+  background-color: white;
+  border: 1px solid #37a48d;
+  color: #37a48d;
+}
+
+a.card-button:hover {
+  color: aquamarine;
+  border: 1px solid #37a48d;
+}
+
+div.footer h4 {
+  bottom: 0;
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+/* #####################################Mobile View############################################ */
+
+@media only screen and (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+
+  a.logo {
+    margin: auto;
+  }
+
+  div.nav-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav.top-nav {
+    opacity: 1;
+    background-color: darkcyan;
+  }
+
+  div.redirect {
+    display: flex;
+  }
+
+  div.redirect a {
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  form.redirect button {
+    background: none;
+    border: 0;
+    display: contents;
+    color: whitesmoke;
+  }
+
+  .buttonl:hover {
+    border: 1px solid white;
+  }
+
+  img.blog-image {
+    width: 12rem;
+    height: 15vh;
+  }
+}
+
+/* #########################Login Section Css################################## */
+
+.hideform {
+  display: none;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  background-color: #37a48d;
+  color: aliceblue;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: 2rem;
+  border-radius: 1.75rem;
+}
+
+.form-label-group > label {
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}

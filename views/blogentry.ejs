@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/adminblogs.css" />
+    <title>Blog | Opdemy</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Navigation-2 -->
+      <nav class="navbar top-nav justify-content-between" id="navbar">
+        <button
+          class="navbar-toggler hidden-sm-up"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          &#9776;
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="row">
+            <div class="col-sm-12 nav-2">
+              <div class="create-blog-conatiner">
+                <div class="redirect ">
+                  <a href="/blogOpdemy">Home</a>
+                </div>
+              </div>
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn my-2 my-sm-0" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Blog Body -->
+      <div class="blogbody">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-lg-7">
+            <div class="image">
+              <img src="/images/logo.png" />
+            </div>
+            <div class="container-fluid blog-container">
+              <!-- form goes here -->
+              <form action="/blogentry/<%= adminId %>" id="submitBlog" method="POST">
+                <!-- title -->
+                <div class="form-group">
+                  <label for="blogtitle">Title Of The Blog</label>
+                  <input
+                    type="text"
+                    name="blogtitle"
+                    class="form-control"
+                    placeholder="A catchy Title attracts everone"
+                  />
+                </div>
+                <!-- Image -->
+                <div class="form-group">
+                  <label for="image">Any image you find suitable here</label>
+                  <input
+                    type="file"
+                    name="blog-image"
+                    class="form-control-file"
+                  />
+                </div>
+                <!-- textArea -->
+                <div class="form-group">
+                  <label for="blogBody">Your Blog Goes Here</label>
+                  <textarea
+                    id="note"
+                    type="text"
+                    name="blogBody"
+                    class="form-control rounded-0"
+                    rows="20"
+                    placeholder="You can start writing here..."
+                  ></textarea>
+                </div>
+                <!-- Submit -->
+                <input
+                  type="submit"
+                  value="Post"
+                  class="btn btn-lg btn-block Submit-btn"
+                />
+              </form>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <h5>Copyright © 2019. All Rights Reserved.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      window.onscroll = function() {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+    <!-- auto increase height script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+</html>

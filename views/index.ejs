@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Blog | Opdemy</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Navigation-1 -->
+      <div class="navigation">
+        <nav class="navbar o">
+          <a class="navbar-brand logo animated bounce" href="#">
+            O
+          </a>
+          <h2 class="icon">Blog | Opdemy</h2>
+        </nav>
+      </div>
+
+      <!-- Navigation-2 -->
+      <nav class="navbar top-nav justify-content-between" id="navbar">
+        <button
+          class="navbar-toggler hidden-sm-up"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          &#9776;
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="row">
+            <div class="col-sm-12 nav-2">
+              <div class="redirect ">
+                <a
+                  href="#loginModal"
+                  id="show"
+                  role="button"
+                  data-toggle="modal"
+                  >Login</a
+                >
+                <div class="redirect ">
+                  <form
+                    class="redirect "
+                    action="/logout?_method=DELETE"
+                    method="POST"
+                  >
+                    <button type="submit" class="buttonl">Log out</button>
+                  </form>
+                </div>
+              </div>
+
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn my-2 my-sm-0" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ########################check this form for authentication######################## -->
+      <div class="container hideform center" id="loginx">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <button id="close" style="float: right;">X</button>
+                <h5 class="card-title text-center">Sign In</h5>
+                <form action="/login" method="POST" class="form-signin">
+                  <div class="form-label-group">
+                    <input
+                      type="email"
+                      name="email"
+                      id="inputEmail"
+                      class="form-control"
+                      placeholder="Email address"
+                      required
+                      autofocus
+                    />
+                    <label for="inputEmail">Email address</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input
+                      type="password"
+                      name="password"
+                      id="inputPassword"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                    />
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <input
+                    type="submit"
+                    value="Log in"
+                    class="btn btn-lg btn-block text-uppercase"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- whole body of the blog page -->
+      <div class="whole-container">
+        <div class="row full-container">
+          <!-- latest updated section -->
+          <div class="col-lg-6 col-sm-12 latest-blogs">
+            <!-- Header For Latest Blog Cards -->
+            <div>
+              <div class="row">
+                <div class="col-sm-12 blog-header">
+                  <h2>Latest Blogs</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog cards -->
+            <div class="blog-cards">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col-lg-8 col-sm-12">
+                  <% for (var blog in obj.byid) { %>
+                  <!-- card 1 -->
+                  <div class="row blogcard">
+                    <!-- <div class="col-lg-5 col-sm-12 blog-image-container">
+                      <img
+                        src="/images/scholarship.jpg"
+                        alt="sch"
+                        class="blog-image"
+                      />
+                    </div> -->
+                    <div class="col-lg-7 col-sm-12 blog-column">
+                      <h2><%= obj.byid[blog].title %></h2>
+                      <p>
+                        <%= obj.byid[blog].blogContent.substring(0,300) %>...
+                      </p>
+                    </div>
+                    <div class="blog-navigation-buttons">
+                      <div class="button">
+                        <a
+                          type="submit"
+                          href="/blogPage/<%= JSON.parse(obj.byid[blog].Id) %>"
+                          class="btn btn-outline card-button"
+                        >
+                          View this Blog
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Most liked section -->
+          <div class="col-lg-6 col-sm-12 most-liked-blogs">
+            <!-- Header For Highest Rated Blog Cards -->
+            <div>
+              <div class="row">
+                <div class="col-sm-12 blog-header">
+                  <h2>Most Liked Blogs</h2>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog cards -->
+            <div class="blog-cards">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col-lg-8 col-sm-12">
+                  <% for (var blog in obj.bylikes) { %>
+                  <!-- card 1 -->
+                  <div class="row blogcard">
+                    <!-- <div class="col-lg-5 col-sm-12 blog-image-container">
+                      <img
+                        src="/images/scholarship.jpg"
+                        alt="sch"
+                        class="blog-image"
+                      />
+                    </div> -->
+                    <div class="col-lg-7 col-sm-12 blog-column">
+                      <h2><%= obj.bylikes[blog].title %></h2>
+                      <p>
+                        <%= obj.bylikes[blog].blogContent.substring(0,300) %>...
+                      </p>
+                    </div>
+                    <div class="blog-navigation-buttons">
+                      <div class="button">
+                        <a
+                          type="submit"
+                          href="/blogPage/<%= JSON.parse(obj.bylikes[blog].Id) %>"
+                          class="btn btn-outline card-button"
+                        >
+                          View this Blog
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+              >Previous</a
+            >
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav> -->
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4>Copyright © 2019. All Rights Reserved.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Sticky Navbar -->
+    <script>
+      window.onscroll = function() {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+
+    <!-- Login Query -->
+    <script>
+      $("#show").on("click", function() {
+        $(".center").show();
+        $(this).hide();
+      });
+
+      $("#close").on("click", function() {
+        $(".center").hide();
+        $("#show").show();
+      });
+    </script>
+  </body>
+</html>

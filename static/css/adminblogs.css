@@ -1,0 +1,141 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+div.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+div.nav-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.create-blog-conatiner {
+  display: flex;
+}
+
+nav.top-nav {
+  background-color: darkcyan;
+}
+
+div.redirect a {
+  padding: 20px;
+  color: white;
+}
+
+div.redirect a:hover {
+  border: 1px solid white;
+}
+
+form.redirect button {
+  background: none;
+  border: 0;
+  display: contents;
+  color: whitesmoke;
+}
+
+.buttonl:hover {
+  border: 1px solid white;
+}
+
+div.blog-header {
+  display: flex;
+  justify-content: center;
+}
+
+div.blog-header h2 {
+  font-weight: 400;
+}
+
+div.blog-image-container {
+  display: flex;
+  align-items: center;
+}
+
+div.blogcard {
+  border: 1px solid green;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+img.blog-image {
+  width: 12rem;
+  height: 15vh;
+}
+
+div.button {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.blog-navigation-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+a.card-button {
+  background-color: white;
+  border: 1px solid #37a48d;
+  color: #37a48d;
+}
+
+a.card-button:hover {
+  color: aquamarine;
+  border: 1px solid #37a48d;
+}
+
+div.footer h5 {
+  bottom: 0;
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+/* #####################################Mobile View############################################ */
+
+@media only screen and (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+
+  a.logo {
+    margin: auto;
+  }
+
+  div.nav-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav.top-nav {
+    opacity: 1;
+    background-color: darkcyan;
+  }
+
+  div.redirect {
+    display: flex;
+  }
+
+  div.redirect a {
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  img.blog-image {
+    width: 12rem;
+    height: 15vh;
+  }
+
+  div.row.blogcard {
+    padding: inherit;
+  }
+}

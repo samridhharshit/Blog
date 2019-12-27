@@ -1,0 +1,100 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+div.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+div.nav-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.create-blog-conatiner {
+  display: flex;
+}
+
+nav.top-nav {
+  background-color: darkcyan;
+}
+
+div.redirect a {
+  padding: 10px;
+  color: white;
+}
+
+div.redirect a:hover {
+  border: 1px solid white;
+}
+
+form.redirect button {
+  background: none;
+  border: 0;
+  display: contents;
+  color: whitesmoke;
+}
+
+.buttonl:hover {
+  border: 1px solid white;
+}
+
+div.image img {
+  display: block;
+  margin: auto;
+}
+
+div.blog-container {
+  padding: 15px 10px;
+}
+
+div.blogbody h2 {
+  text-align: center;
+}
+
+input.Submit-btn:hover {
+  color: #37a48d;
+}
+
+div.footer h5 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* #####################################Mobile View############################################ */
+
+@media only screen and (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+
+  div.nav-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.redirect {
+    display: flex;
+  }
+
+  div.redirect a {
+    padding: 20px;
+    text-decoration: none;
+  }
+
+  img.blog-image {
+    width: 12rem;
+    height: 15vh;
+  }
+
+  div.footer {
+    display: none;
+  }
+}
